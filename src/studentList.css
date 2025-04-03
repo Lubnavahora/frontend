@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  /* Container */
+  .student-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header */
+  h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  /* Loading & Error Messages */
+  p {
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  p.error {
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* Student List */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    background: #e9ecef;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  li:hover {
+    background: #d6d8db;
+  }
+  
+  /* Student Name */
+  strong {
+    font-size: 18px;
+    color: #007bff;
+  }
+  
+  /* Email & Age */
+  li span {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Enrolled Courses */
+  em {
+    font-size: 14px;
+    color: #28a745;
+    margin-top: 5px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .student-container {
+      width: 95%;
+    }
+  
+    li {
+      padding: 12px;
+    }
+  
+    strong {
+      font-size: 16px;
+    }
+  
+    em {
+      font-size: 12px;
+    }
+  }
+  

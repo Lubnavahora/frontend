@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import axios from '../axiosConfig';
 
-const AddStudentForm = () => {
-  const [form, setForm] = useState({ name: '', email: '' });
+const AddStudentForm = ({ onStudentAdded }) => {
+  const [form, setForm] = useState({ name: '', email: '', age: '' });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('/students', form)
+    axios.post('/api/students', form)
       .then(() => {
         alert('Student added!');
-        setForm({ name: '', email: '' });
+        setForm({ name: '', email: '', age: '' });
+        onStudentAdded(); // 🔄 Refresh student list
       })
       .catch(err => alert('Failed to add student'));
   };
@@ -28,6 +29,12 @@ const AddStudentForm = () => {
         placeholder="Email"
         value={form.email}
         onChange={(e) => setForm({ ...form, email: e.target.value })}
+      /><br />
+      <input
+        type="number"
+        placeholder="Age"
+        value={form.age}
+        onChange={(e) => setForm({ ...form, age: e.target.value })}
       /><br />
       <button type="submit">Add</button>
     </form>

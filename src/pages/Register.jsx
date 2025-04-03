@@ -9,13 +9,15 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axiosInstance.post('/api/auth/register', formData);
+      const res = await axiosInstance.post('/api/auth/register', formData);
       alert('Registration successful. Please log in.');
       navigate('/login');
     } catch (error) {
-      alert('Registration failed. Please try again.');
+      console.error('Error:', error.response?.data || error.message);
+      alert(error.response?.data?.message || 'Registration failed. Please try again.');
     }
   };
+  
 
   return (
     <div className="max-w-md mx-auto mt-20">
